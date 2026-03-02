@@ -51,6 +51,6 @@ public class TestSelenium_TTA_Bank {
         WebElement TotalBalance=driver.findElement(By.xpath("//h3[@class=\"mt-2 text-3xl font-bold\"]"));
         Assert.assertEquals(TotalBalance.getText(),"$45,000.00");
 
-        driver.quit();
+
     }
 }
