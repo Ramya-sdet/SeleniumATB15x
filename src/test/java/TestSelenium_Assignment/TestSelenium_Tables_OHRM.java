@@ -16,7 +16,7 @@ import java.util.List;
 public class TestSelenium_Tables_OHRM {
     @Owner("Ramya")
     @Severity(SeverityLevel.CRITICAL)
-    @Description("Verify login is working")
+    @Description("Verify Login, Find the first Terminated Employee and click on the Delete ")
     @Test
     public void test_OHRM_login() throws InterruptedException {
         WebDriver driver = new ChromeDriver();
@@ -35,7 +35,7 @@ public class TestSelenium_Tables_OHRM {
 
         Thread.sleep(3000);
 
-        //Login, Find the first Terminated Employee and click on the Delete
+        // Find the first Terminated Employee and click on the Delete
         List<WebElement> First_TerminatedEmp = driver.findElements(By.xpath("//div[text()=\"Terminated\"]"));
         WebElement First_TerminatedEmpName = driver.findElement(By.xpath("//div[contains(text(),'Terminated')]/../preceding-sibling::div[3]"));
         System.out.println(First_TerminatedEmpName.getText());
