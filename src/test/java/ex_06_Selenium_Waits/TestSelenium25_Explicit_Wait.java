@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-public class TestSelenium23_Explicit_Wait {
+public class TestSelenium25_Explicit_Wait {
 
     // Locators - Find the Web elements
     // Open the URL .app.vwo.com/#/login](https://app.vwo.com/#/login)

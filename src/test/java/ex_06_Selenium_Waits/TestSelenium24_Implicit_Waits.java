@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-public class TestSelenium22_Implicit_Waits {
+public class TestSelenium24_Implicit_Waits {
 
     @Description("Verify Ebay Print the prices (iMac)")
     @Test

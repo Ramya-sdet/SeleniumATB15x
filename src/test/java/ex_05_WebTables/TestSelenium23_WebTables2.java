@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 
-public class TestSelenium_WebTables2 {
+public class TestSelenium23_WebTables2 {
 
 
     @Test

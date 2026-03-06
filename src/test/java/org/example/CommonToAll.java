@@ -4,7 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -12,22 +11,40 @@ import java.time.Duration;
 
 public class CommonToAll {
     // Common functionality for all tests
+    public ChromeDriver driver;
 
-    public void openBrowser(WebDriver driver, String url) {
+    public void openBrowser(WebDriver driver,String url){
         driver.get(url);
         driver.manage().window().maximize();
     }
 
-    public void closeBrowser(WebDriver driver) {
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+
+    public void closeBrowser(WebDriver driver){
         driver.quit();
     }
 
-    public void customWait(int time) {
+    public void waitForVisibility(WebDriver driver, int timeInSeconds,String xpath){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeInSeconds));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
+    }
+    public void waitForVisibility(WebDriver driver,String xpath){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
+    }
+
+
+    public void waitForTextToBePresent(WebDriver driver, int timeInSeconds,String xpath,String text){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeInSeconds));
+        wait.until(ExpectedConditions.textToBePresentInElement(driver.findElement(By.xpath(xpath)),text));
+    }
+
+    public void waitForAlert(WebDriver driver, int timeInSeconds){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeInSeconds));
+        wait.until(ExpectedConditions.alertIsPresent());
+    }
+
+
+    public void waitForJVM(int time){
         try {
             Thread.sleep(time);
         } catch (InterruptedException e) {
@@ -35,10 +52,9 @@ public class CommonToAll {
         }
     }
 
-    public void waitForVisibility(WebDriver driver, int timeInseconds, String xpath) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeInseconds));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
-
-
+    public void clickElementFound(String xpath){
+        WebElement element = driver.findElement(By.xpath(xpath));
+        element.click();
     }
+
 }

@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
-public class TestSelenium24_MiniProject4 extends CommonToAll {
+public class TestSelenium26_MiniProject4 extends CommonToAll {
 
 
     @Description("Verify  makemytrip opens with modal")

@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 import java.util.function.Function;
 
-public class TestSelenium25_Fluent_Wait extends CommonToAll {
+public class TestSelenium27_Fluent_Wait extends CommonToAll {
 
 
     @Test
